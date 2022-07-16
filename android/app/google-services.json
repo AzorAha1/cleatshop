@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "397467000723",
+    "project_id": "cleatshop-f2617",
+    "storage_bucket": "cleatshop-f2617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397467000723:android:f5078b66ffb8c4194e9266",
+        "android_client_info": {
+          "package_name": "com.faiz.cleatshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397467000723-b0nau39rh2ekpcb7skov5mvqlvumpfuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeQLgY9XV_sQ8wP_4XSiOM883MNT2HIao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397467000723-b0nau39rh2ekpcb7skov5mvqlvumpfuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
