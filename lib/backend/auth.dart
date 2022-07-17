@@ -1,3 +1,4 @@
+import 'package:cleatshop/backend/database.dart';
 import 'package:cleatshop/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -44,7 +45,8 @@ class AuthService {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      return _firebaseuser(user!);
+      await Database(uid: user!.uid).newuserInfo('New Item', '0', 20);
+      return _firebaseuser(user);
     } catch (e) {
       print(e);
     }
@@ -52,7 +54,8 @@ class AuthService {
 
   Future SignInwithemailandpassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      UserCredential result = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
       User? user = result.user;
       return _firebaseuser(user!);
     } catch (e) {
