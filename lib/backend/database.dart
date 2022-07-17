@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Database {
-  final String? uid;
-  Database({this.uid});
+  final String uid;
+  Database({required this.uid});
 
   final CollectionReference cleatcollection =
       FirebaseFirestore.instance.collection('cleat');
