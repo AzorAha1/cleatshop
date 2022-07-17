@@ -1,8 +1,9 @@
+import 'package:cleatshop/models/cleat.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Database {
-  final String uid;
-  Database({required this.uid});
+  final String? uid;
+  Database({this.uid});
 
   final CollectionReference cleatcollection =
       FirebaseFirestore.instance.collection('cleat');
@@ -13,5 +14,19 @@ class Database {
       'number': number,
       'color': color,
     });
+  }
+
+  List<Cleat> _cleatlistforQuerySnapshots(QuerySnapshot snapshot) {
+    return snapshot.docs.map((e) {
+      return Cleat(
+        name: e.get('name')??'',
+        color: e.get('color')?? 0,
+        number: e.get('number')?? '',
+      );
+    }).toList();
+  }
+
+  Stream<List<Cleat>> get cleats {
+    return cleatcollection.snapshots().map(((QuerySnapshot snapshot) => _cleatlistforQuerySnapshots(snapshot) ));
   }
 }
